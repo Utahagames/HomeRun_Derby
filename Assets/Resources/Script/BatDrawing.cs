@@ -11,6 +11,8 @@ public class BatDrawing : MonoBehaviour
 
     [SerializeField] EdgeCollider2D _edgeCollider2D;
 
+    public float _width;
+
     Transform transform_HandSide;
     Transform transform_EdgeSide;
 
@@ -38,8 +40,8 @@ public class BatDrawing : MonoBehaviour
         };
 
         //始点、終点の幅を変更
-        _lineRenderer.startWidth = 0.5f;
-        _lineRenderer.endWidth = 0.5f;
+        _lineRenderer.startWidth = _width;
+        _lineRenderer.endWidth = _width;
 
         // 線を引く場所を指定する
         _lineRenderer.SetPositions(positions);
