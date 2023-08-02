@@ -666,9 +666,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1433180533}
-  - component: {fileID: 1433180534}
+  - component: {fileID: 1433180535}
   m_Layer: 0
-  m_Name: Ball_HitSpot
+  m_Name: Target_HitSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,7 +689,7 @@ Transform:
   m_Father: {fileID: 2083752472}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1433180534
+--- !u!114 &1433180535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,11 +698,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1433180532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb9a003a5b5d8a479244836a12445f1, type: 3}
+  m_Script: {fileID: 11500000, guid: c5f58d8a4fa1df94391f70b62484d073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball_HitMark: {fileID: 3342223385918343136, guid: 87e6904731404d34293da79d29759612, type: 3}
-  ball_position: {x: 0, y: 0, z: 0}
+  TargetMark: {fileID: 3342223385918343136, guid: 87e6904731404d34293da79d29759612, type: 3}
+  Target_position: {x: 0, y: 0, z: 0}
 --- !u!1 &1752333275
 GameObject:
   m_ObjectHideFlags: 0

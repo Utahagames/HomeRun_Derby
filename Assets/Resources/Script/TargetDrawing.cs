@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallDrawing : MonoBehaviour
+public class TargetDrawing : MonoBehaviour
 {
-    [SerializeField] GameObject ball_HitMark;
+    [SerializeField] GameObject TargetMark;
 
-    public Vector3 ball_position;
+    public Vector3 Target_position;
 
     // Start is called before the first frame update
     void Start()
     {
-        DrawingBall();
+        DrawingTarget();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void DrawingBall()
+    public void DrawingTarget()
     {
         float rndX = Random.Range(-1.5f, 1.5f);
         float rndY = Random.Range(-1.5f, 1.5f);
@@ -28,8 +28,8 @@ public class BallDrawing : MonoBehaviour
         // ボールマーク生成位置
         Vector3 pos = new Vector3(rndX, rndY, 0.0f);
         // ボールマークを指定位置に生成
-        Instantiate(ball_HitMark, pos, Quaternion.identity);
+        Instantiate(TargetMark, pos, Quaternion.identity);
 
-        ball_position = pos;
+        Target_position = pos;
     }
 }
