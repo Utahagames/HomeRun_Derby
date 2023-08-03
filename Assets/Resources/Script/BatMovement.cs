@@ -29,7 +29,6 @@ public class BatMovement : MonoBehaviour
         {
             if(transform_HandSide.position.y <= 1.5f)
             {
-                print("W");
                 transform_HandSide.position += moveUP_Speed * Time.deltaTime;
 
                 batDrawing.DrawingBat();
@@ -39,7 +38,6 @@ public class BatMovement : MonoBehaviour
         {
             if (transform_HandSide.position.y >= -1.5f)
             {
-                print("S");
                 transform_HandSide.position += moveDown_Speed * Time.deltaTime;
 
                 batDrawing.DrawingBat();
@@ -50,7 +48,6 @@ public class BatMovement : MonoBehaviour
         {
             if (transform_EdgeSide.position.y <= 1.5f)
             {
-                print("UP");
                 transform_EdgeSide.position += moveUP_Speed * Time.deltaTime;
 
                 batDrawing.DrawingBat();
@@ -60,7 +57,6 @@ public class BatMovement : MonoBehaviour
         {
             if (transform_EdgeSide.position.y >= -1.5f)
             {
-                print("Down");
                 transform_EdgeSide.position += moveDown_Speed * Time.deltaTime;
 
                 batDrawing.DrawingBat();
