@@ -8,6 +8,8 @@ public class TargetDrawing : MonoBehaviour
 
     public Vector3 Target_position;
 
+    GameObject Target_Instant;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class TargetDrawing : MonoBehaviour
         // ボールマーク生成位置
         Vector3 pos = new Vector3(rndX, rndY, 0.0f);
         // ボールマークを指定位置に生成
-        Instantiate(TargetMark, pos, Quaternion.identity);
+        Target_Instant = Instantiate(TargetMark, pos, Quaternion.identity);
 
         Target_position = pos;
     }

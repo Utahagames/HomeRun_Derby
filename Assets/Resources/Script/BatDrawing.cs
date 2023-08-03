@@ -11,12 +11,12 @@ public class BatDrawing : MonoBehaviour
 
     [SerializeField] EdgeCollider2D _edgeCollider2D;
 
-    //[SerializeField] PolygonCollider2D _polygonCollider2D;
-
     public float _width;
 
     Transform transform_HandSide;
     Transform transform_EdgeSide;
+
+    bool TouchToTarget = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,6 @@ public class BatDrawing : MonoBehaviour
         _lineRenderer.SetPositions(positions);
 
         SettingEdgeCollider();
-        //SettingPolygonCollider();
     }
 
     void SettingEdgeCollider()
@@ -63,22 +62,19 @@ public class BatDrawing : MonoBehaviour
         _edgeCollider2D.SetPoints(collider_positions);
     }
 
-    void SettingPolygonCollider()
-    {
-        List<Vector2> collider_positions = new List<Vector2>
-        {
-            new Vector2( transform_HandSide.position.x ,transform_HandSide.position.y + 0.01f),               // 開始点
-            new Vector2( transform_EdgeSide.position.x ,transform_EdgeSide.position.y + 0.01f),
-            new Vector2( transform_EdgeSide.position.x ,transform_EdgeSide.position.y - 0.01f),
-            new Vector2( transform_HandSide.position.x ,transform_HandSide.position.y - 0.01f)            // 終了点
-        };
-
-        //_polygonCollider2D.SetPath( 0, collider_positions);
-    }
-
     void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        //Debug.Log("当たっている");
+        TouchToTarget = true;
     }
 
+    // ゲームオブジェクト同士が接触から離れたタイミングで実行
+    void OnTriggerExit2D(Collider2D otherCollider)
+    {
+        TouchToTarget = false;
+    }
+
+    public bool JudgeHit()
+    {
+        return TouchToTarget;
+    }
 }
