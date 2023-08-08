@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetDrawing : MonoBehaviour
+public class TargetDrawing : SingletonMonoBehaviour<TargetDrawing>
 {
     [SerializeField] GameObject TargetMark;
 
@@ -13,7 +13,7 @@ public class TargetDrawing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DrawingTarget();
+
     }
 
     // Update is called once per frame
@@ -33,5 +33,10 @@ public class TargetDrawing : MonoBehaviour
         Target_Instant = Instantiate(TargetMark, pos, Quaternion.identity);
 
         Target_position = pos;
+    }
+
+    public void DestroyTarget()
+    {
+        Destroy(Target_Instant);
     }
 }

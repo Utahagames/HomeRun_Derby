@@ -49,7 +49,7 @@ public class CountDownTimer : MonoBehaviour
     {
         IsTimerStarted = true;
 
-        CountDownTime = 3.0f;
+        CountDownTime = TimeLimit;
 
         timerText.text = CountDownTime.ToString("0.00");
     }

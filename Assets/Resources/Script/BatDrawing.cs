@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatDrawing : MonoBehaviour
+public class BatDrawing : SingletonMonoBehaviour<BatDrawing>
 {
     [SerializeField] GameObject Bat_HandSide;
     [SerializeField] GameObject Bat_EdgeSide;

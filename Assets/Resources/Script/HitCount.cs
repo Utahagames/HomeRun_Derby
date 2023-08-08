@@ -7,6 +7,9 @@ using TMPro;
 public class HitCount : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI resultText;
+    [SerializeField] TextMeshProUGUI scoreText;
+
+    public int HitScore { get; set; } = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +33,24 @@ public class HitCount : MonoBehaviour
         if(IsHitted)
         {
             resultText.text = "HIT";
+
+            HitScore++;
+            ChangeScoreText();
         }
         else
         {
             resultText.text = "STRIKE";
         }
+    }
+
+    public void ResetScoreText()
+    {
+        scoreText.text = "0";
+        HitScore = 0;
+    }
+
+    public void ChangeScoreText()
+    {
+        scoreText.text = HitScore.ToString();
     }
 }
