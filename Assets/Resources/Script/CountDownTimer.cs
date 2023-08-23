@@ -40,7 +40,7 @@ public class CountDownTimer : MonoBehaviour
 
                 timerText.text = "0.00";
 
-                BattingManager.Instance.TimerFinished();
+                BattingManager.Instance.TurnFinished();
             }
         }
     }

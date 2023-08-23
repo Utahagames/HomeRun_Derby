@@ -7,6 +7,8 @@ public class BattingManager : SingletonMonoBehaviour<BattingManager>
     [SerializeField] CountDownTimer countDownTimer;
     [SerializeField] HitCount hitCount;
 
+    public int PittingTurns = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,27 @@ public class BattingManager : SingletonMonoBehaviour<BattingManager>
 
     }
 
+    public void RoundStart()
+    {
+        // コルーチンを実行  
+        StartCoroutine("RoundPlaying");
+    }
+
+    IEnumerator RoundPlaying()
+    {        
+        for (int i = 0; i < PittingTurns; i++)
+        {
+            //ターン開始
+            TurnStart();
+
+            //4秒停止
+            yield return new WaitForSeconds(4);
+        }
+
+        yield break;
+
+    }
+
     public void TurnStart()
     {
         TargetDrawing.Instance.DrawingTarget();
@@ -26,7 +49,7 @@ public class BattingManager : SingletonMonoBehaviour<BattingManager>
         hitCount.ResetResultText();
     }
 
-    public void TimerFinished()
+    public void TurnFinished()
     {
         bool IsHitted = BatDrawing.Instance.JudgeHit();
 
